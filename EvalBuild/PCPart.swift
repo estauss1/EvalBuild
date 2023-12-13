@@ -224,7 +224,7 @@ class PSU: PCPart{
         self.wattage = wattage
         self.size = size
         
-        var name = String(self.wattage.rawValue) + " watts"
+        let name = String(self.wattage.rawValue) + " watts"
         super.init(averagePrice: averagePrice, name: name, maxWattsDrawn: 0)
     }
     
