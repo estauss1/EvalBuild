@@ -61,13 +61,23 @@ enum Manufacturer: String{
 }
 
 class GPU: PCPart {
-    var manufacturuer: Manufacturer;
+    let manufacturuer: Manufacturer;
     
     init(manufacturuer: Manufacturer, averagePrice: Float, name: String,
          maxWattsDrawn: Int){
         self.manufacturuer = manufacturuer
         
         super.init(averagePrice: averagePrice, name: name, maxWattsDrawn: maxWattsDrawn)
+    }
+    
+    func IsCompatible(with aCase: Case) -> Compatibility {
+        let compat: Compatibility
+        if(aCase.size == .MiniTower){
+            compat = .Caution
+        }else{
+            compat = .Compatible
+        }
+        return compat
     }
 }
 
@@ -88,7 +98,7 @@ enum MoboSize: Int{
 }
 
 class Motherboard: PCPart{
-    private let chipset: Chipset
+    public let chipset: Chipset
     public let size: MoboSize
     public let compatibleManufacturer: Manufacturer
     
@@ -105,6 +115,10 @@ class Motherboard: PCPart{
         
         super.init(averagePrice: averagePrice, name: name, maxWattsDrawn: 50)
     }
+    
+    func IsCompatible(with cpu: CPU) -> Compatibility {
+        return (cpu.compatibleChipsets.contains(chipset)) ? .Compatible : .Incompatible
+    }
 }
 
 enum Generation {
@@ -115,25 +129,40 @@ enum Generation {
     case Fourteenth
 }
 
+enum CPUModel{
+    case Ryzen5
+    case Ryzen7
+    case Ryzen9
+    case i5
+    case i7
+    case i9
+}
+
 class CPU: PCPart {
     public let generation: Generation
+    private let manufacturer: Manufacturer
+    public let model: CPUModel
     public let compatibleChipsets: [Chipset]
     
     init(averagePrice: Float, name: String, maxWattageDraw: Int,
-         generation: Generation) {
+         generation: Generation, model: CPUModel) {
         self.generation = generation
+        self.model = model
         
         var chipsetList: [Chipset] = []
         switch generation {
         case .Zen3:
             chipsetList.append(.B550)
             chipsetList.append(.X570)
+            manufacturer = Manufacturer.AMD
         case .Zen4:
             chipsetList.append(.B650)
             chipsetList.append(.X670)
+            manufacturer = Manufacturer.AMD
         case .Twelfth, .Thirteenth, .Fourteenth:
             chipsetList.append(.Z690)
             chipsetList.append(.Z790)
+            manufacturer = Manufacturer.Intel
         }
         
         compatibleChipsets = chipsetList
@@ -172,7 +201,7 @@ class Storage: PCPart{
 }
 
 
-enum PSUWattage: Int{
+enum PSUWattage: Float{
     case w650 = 650
     case w750 = 750
     case w850 = 850
@@ -197,6 +226,25 @@ class PSU: PCPart{
         
         var name = String(self.wattage.rawValue) + " watts"
         super.init(averagePrice: averagePrice, name: name, maxWattsDrawn: 0)
+    }
+    
+    func IsCompatible(with parts: [PCPart]) -> Compatibility{
+        var maxSystemLoad: Float = 0.0
+        for part in parts{
+            maxSystemLoad += Float(part.maxWattsDrawn)
+        }
+        
+        let overhead = maxSystemLoad * 0.2
+        maxSystemLoad += overhead
+        
+        let compat: Compatibility
+        if(wattage.rawValue < maxSystemLoad){
+            compat = .Incompatible
+        }else{
+            compat = .Compatible
+        }
+        
+        return compat
     }
 }
 
@@ -235,7 +283,37 @@ class Case: PCPart{
         }
     }
     
-    //func IsCompatible(with )
+    func IsCompatible(with cooler: Cooler) -> Compatibility{
+        let compat: Compatibility
+        
+        if(size == CaseSize.FullTower){ //compatible with all coolers
+            compat = Compatibility.Compatible
+        } else if(size == CaseSize.MidTower){
+            
+            switch cooler.type{
+            case .Water360:
+                compat = Compatibility.Incompatible
+            case .SingleTowerAir, .DualTowerAir:
+                compat = Compatibility.Caution
+            default:
+                compat = Compatibility.Compatible
+            }
+            
+        }else{ //minitower
+            
+            switch cooler.type{
+            case .Water360, .DualTowerAir, .SingleTowerAir:
+                compat = Compatibility.Incompatible
+            case .Water240:
+                compat = Compatibility.Caution
+            default:
+                compat = Compatibility.Compatible
+            }
+        }
+        
+        return compat
+    }
+    
 }
 
 enum CoolerType{
@@ -247,9 +325,120 @@ enum CoolerType{
     case LowProfileAir
 }
 
+class Cooler: PCPart {
+    public let type: CoolerType
+    
+    init(averagePrice: Float, name: String, type: CoolerType){
+        self.type = type
+        
+        var maxWatts: Int
+        let caseFanWatts = 3
+        let pumpWatts = 30
+        
+        switch self.type{
+        case .LowProfileAir, .SingleTowerAir:
+            maxWatts = caseFanWatts
+        case .DualTowerAir:
+            maxWatts = caseFanWatts * 2
+        case .Water120:
+            maxWatts = pumpWatts + caseFanWatts
+        case .Water240:
+            maxWatts = pumpWatts + caseFanWatts * 2
+        case .Water360:
+            maxWatts = pumpWatts + caseFanWatts * 3
+        }
+        
+        super.init(averagePrice: averagePrice, name: name, maxWattsDrawn: maxWatts)
+    }
+    
+    func IsCompatible(with cpu: CPU) -> Compatibility {
+        let compat: Compatibility
+        if(cpu.model == .Ryzen9 || cpu.model == .i9 || cpu.model == .i7){
+            switch type{
+            case .LowProfileAir, .SingleTowerAir, .Water120:
+                compat = .Caution
+            default:
+                compat = .Compatible
+            }
+        }
+        else{
+            compat = .Compatible
+        }
+        
+        return compat
+    }
+    
+}
 
+enum DDRGeneration{
+    case DDR4
+    case DDR5
+}
 
+enum RAMSpeed{
+    case mhz3200
+    case mhz3600
+    case mhz4400
+    case mhz5600
+    case mhz6000
+    case mhz6400
+    case mhz7200
+}
 
+enum RAMAmount: Int{
+    case gb16 = 16
+    case gb32 = 32
+    case gb48 = 48
+    case gb64 = 64
+}
+
+class RAM: PCPart{
+    let gen: DDRGeneration
+    let speed: RAMSpeed
+    let amount: RAMAmount
+    
+    init(averagePrice: Float, name: String, speed: RAMSpeed, amount: RAMAmount){
+        self.speed = speed
+        self.amount = amount
+        
+        if(self.speed == .mhz3200 || self.speed == .mhz3600
+           || self.speed == .mhz4400){
+            gen = DDRGeneration.DDR4
+        }
+        else{
+            gen = DDRGeneration.DDR5
+        }
+        
+        super.init(averagePrice: averagePrice, name: name, maxWattsDrawn: 5)
+    }
+    
+    func IsCompatible(with motherboard: Motherboard) -> Compatibility {
+        let compat: Compatibility
+        
+        if(motherboard.chipset == .B550 || motherboard.chipset == .X570){
+            switch gen{
+            case .DDR4:
+                compat = .Compatible
+            case .DDR5:
+                compat = .Incompatible
+            }
+        } 
+        else if(motherboard.chipset == .X670 || motherboard.chipset == .B650){
+            switch gen{
+            case .DDR4:
+                compat = .Incompatible
+            case .DDR5:
+                compat = .Compatible
+            }
+        }
+        else{ //z690 and z790
+            compat = .Caution //some models accept ddr4, others accept ddr5
+        }
+    
+        return compat
+    }
+    
+}
 
 
 
