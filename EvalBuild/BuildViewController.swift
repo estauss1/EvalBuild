@@ -60,6 +60,13 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "SequeToGPUManufacturer"){
+            let GPUManufacturerVCRef = segue.destination as! GPUManufacturerViewController
+            GPUManufacturerVCRef.buildVCRef = self
+        }
+    }
 
     /*
     // MARK: - Navigation

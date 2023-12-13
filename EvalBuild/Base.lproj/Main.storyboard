@@ -46,6 +46,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="tintColor" systemColor="systemCyanColor"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="oXb-Qf-48e" kind="show" identifier="SequeToGPUManufacturer" id="HN1-gF-Tp9"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CPU" id="apl-3Q-Irl">
                                         <rect key="frame" x="0.0" y="93.666667938232422" width="393" height="43.666667938232422"/>
@@ -124,6 +127,270 @@
             </objects>
             <point key="canvasLocation" x="-666.41221374045801" y="226.7605633802817"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="WvI-W0-2CZ">
+            <objects>
+                <viewController id="9GG-Km-6Kt" customClass="AMDGPUViewController" customModule="EvalBuild" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lcx-s8-z3e">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LYr-Vj-9Ma">
+                                <rect key="frame" x="0.0" y="103" width="393" height="591"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b0o-nr-bsG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RX7900" id="ZnD-z6-WT2">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Tsx-MG-t2O">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RX 7900 XT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuC-aF-uR4">
+                                                    <rect key="frame" x="18" y="53.666666666666657" width="92" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tuC-aF-uR4" firstAttribute="centerX" secondItem="Tsx-MG-t2O" secondAttribute="centerX" id="33f-TR-6p0"/>
+                                                <constraint firstItem="tuC-aF-uR4" firstAttribute="centerY" secondItem="Tsx-MG-t2O" secondAttribute="centerY" id="JPE-Yk-vpN"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="RX7800" id="LZh-5e-vWp">
+                                        <rect key="frame" x="265" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VZH-6c-K67">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RX 7800 XT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Au-ZW-YyN">
+                                                    <rect key="frame" x="18" y="53.666666666666657" width="92" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3Au-ZW-YyN" firstAttribute="centerY" secondItem="VZH-6c-K67" secondAttribute="centerY" id="6Pp-rp-cUc"/>
+                                                <constraint firstItem="3Au-ZW-YyN" firstAttribute="centerX" secondItem="VZH-6c-K67" secondAttribute="centerX" id="Evf-1J-h0X"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="RX7700" id="9iH-aw-Xb3">
+                                        <rect key="frame" x="0.0" y="138" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Sjq-O8-wNf">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RX 7700 XT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udO-gp-PeL">
+                                                    <rect key="frame" x="18" y="53.666666666666657" width="92" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="udO-gp-PeL" firstAttribute="centerX" secondItem="Sjq-O8-wNf" secondAttribute="centerX" id="Axi-mR-Uez"/>
+                                                <constraint firstItem="udO-gp-PeL" firstAttribute="centerY" secondItem="Sjq-O8-wNf" secondAttribute="centerY" id="Zg1-0o-ME9"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="RX7600" id="cKa-1V-rkp">
+                                        <rect key="frame" x="138" y="138" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="juK-3V-NaE">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RX 7600" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OD0-Iz-Yfm">
+                                                    <rect key="frame" x="30.666666666666671" y="53.666666666666657" width="67" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OD0-Iz-Yfm" firstAttribute="centerY" secondItem="juK-3V-NaE" secondAttribute="centerY" id="sKZ-aK-BtA"/>
+                                                <constraint firstItem="OD0-Iz-Yfm" firstAttribute="centerX" secondItem="juK-3V-NaE" secondAttribute="centerX" id="yuH-dF-QyW"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JK-OO-UsB">
+                                <rect key="frame" x="0.0" y="697" width="377" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OdC-9F-GOA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3JK-OO-UsB" firstAttribute="centerX" secondItem="LYr-Vj-9Ma" secondAttribute="centerX" constant="-8" id="1Dz-DW-TFD"/>
+                            <constraint firstItem="LYr-Vj-9Ma" firstAttribute="top" secondItem="OdC-9F-GOA" secondAttribute="top" id="2v4-qn-ndO"/>
+                            <constraint firstItem="3JK-OO-UsB" firstAttribute="leading" secondItem="OdC-9F-GOA" secondAttribute="leading" id="7KF-C3-1nN"/>
+                            <constraint firstItem="OdC-9F-GOA" firstAttribute="trailing" secondItem="3JK-OO-UsB" secondAttribute="trailing" constant="16" id="C2z-1t-yKu"/>
+                            <constraint firstItem="OdC-9F-GOA" firstAttribute="bottom" secondItem="3JK-OO-UsB" secondAttribute="bottom" constant="100" id="CUa-4a-xzP"/>
+                            <constraint firstItem="3JK-OO-UsB" firstAttribute="top" secondItem="LYr-Vj-9Ma" secondAttribute="bottom" constant="24" id="XiT-97-KHf"/>
+                            <constraint firstItem="LYr-Vj-9Ma" firstAttribute="leading" secondItem="OdC-9F-GOA" secondAttribute="leading" id="kqy-tN-rPW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ghK-G2-NmK"/>
+                    <connections>
+                        <outlet property="AMDGPUCollRef" destination="LYr-Vj-9Ma" id="UaN-IV-MxS"/>
+                        <outlet property="selectedLabel" destination="3JK-OO-UsB" id="FeO-6f-ySV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z6J-2l-QlU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-144.27480916030532" y="-1328.1690140845071"/>
+        </scene>
+        <!--NvidiaGPU View Controller-->
+        <scene sceneID="RT6-XX-B3O">
+            <objects>
+                <viewController id="Lyc-4B-btl" customClass="NvidiaGPUViewController" customModule="EvalBuild" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GN2-14-p0v">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hzS-L9-w4g">
+                                <rect key="frame" x="0.0" y="103" width="393" height="515"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ENT-Rg-4vt">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RTX4090" id="FBa-ZN-vZV">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NAR-8l-XDa">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RTX 4090" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STt-76-CAH">
+                                                    <rect key="frame" x="25" y="53.666666666666657" width="78" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="STt-76-CAH" firstAttribute="centerX" secondItem="NAR-8l-XDa" secondAttribute="centerX" id="QFj-Jz-FgR"/>
+                                                <constraint firstItem="STt-76-CAH" firstAttribute="centerY" secondItem="NAR-8l-XDa" secondAttribute="centerY" id="cd5-Fl-aTh"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="RTX4080" id="8oN-VG-cdh">
+                                        <rect key="frame" x="265" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LdG-h9-KT2">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RTX 4080" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AY-Kl-YMK">
+                                                    <rect key="frame" x="25" y="53.666666666666657" width="78" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8AY-Kl-YMK" firstAttribute="centerX" secondItem="LdG-h9-KT2" secondAttribute="centerX" id="dpA-uq-FhZ"/>
+                                                <constraint firstItem="8AY-Kl-YMK" firstAttribute="centerY" secondItem="LdG-h9-KT2" secondAttribute="centerY" id="hc9-9x-Tmw"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="RTX4070" id="M8e-ti-ZpS">
+                                        <rect key="frame" x="0.0" y="138" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="REB-T0-JJx">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RTX 4070" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcA-jI-Zb0">
+                                                    <rect key="frame" x="25.666666666666671" y="53.666666666666657" width="77" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FcA-jI-Zb0" firstAttribute="centerX" secondItem="REB-T0-JJx" secondAttribute="centerX" id="dWz-Wc-Huc"/>
+                                                <constraint firstItem="FcA-jI-Zb0" firstAttribute="centerY" secondItem="REB-T0-JJx" secondAttribute="centerY" id="rDs-KX-FuO"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="RTX4060" id="RBy-Xr-PkK">
+                                        <rect key="frame" x="138" y="138" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8Dg-tf-p8W">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RTX 4060" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oM0-Zl-ylo">
+                                                    <rect key="frame" x="25" y="54.000000000000007" width="78" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oM0-Zl-ylo" firstAttribute="centerX" secondItem="8Dg-tf-p8W" secondAttribute="centerX" id="BdX-JM-xKL"/>
+                                                <constraint firstItem="oM0-Zl-ylo" firstAttribute="centerY" secondItem="8Dg-tf-p8W" secondAttribute="centerY" id="SZG-wZ-kBi"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBi-cM-cHC">
+                                <rect key="frame" x="16" y="739" width="361" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hqv-xK-6nZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hzS-L9-w4g" firstAttribute="top" secondItem="hqv-xK-6nZ" secondAttribute="top" id="FOS-w1-g3f"/>
+                            <constraint firstItem="hzS-L9-w4g" firstAttribute="leading" secondItem="hqv-xK-6nZ" secondAttribute="leading" id="Ph4-p7-ANb"/>
+                            <constraint firstItem="hzS-L9-w4g" firstAttribute="bottom" secondItem="hqv-xK-6nZ" secondAttribute="bottom" constant="-200" id="Udl-oP-LUH"/>
+                            <constraint firstItem="hzS-L9-w4g" firstAttribute="centerX" secondItem="GN2-14-p0v" secondAttribute="centerX" id="koo-B9-d0O"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HKE-oq-7Eu"/>
+                    <connections>
+                        <outlet property="NvidiaGPUColl" destination="hzS-L9-w4g" id="1Qs-wL-jGz"/>
+                        <outlet property="selectedLabel" destination="SBi-cM-cHC" id="dSi-kT-iwN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="99V-gn-4eD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1203.8167938931297" y="-1328.1690140845071"/>
+        </scene>
         <!--Manufacturer View Controller-->
         <scene sceneID="Rdp-Ky-a34">
             <objects>
@@ -133,7 +400,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tGf-vj-7M8">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="96T-pi-I9O">
                                     <size key="itemSize" width="128" height="128"/>
@@ -142,13 +409,53 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fFD-Br-odc">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AMD" id="fFD-Br-odc">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="T1G-YY-8I2">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytb-kK-wDt">
+                                                    <rect key="frame" x="36.666666666666657" y="49" width="55" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemRedColor"/>
+                                            <constraints>
+                                                <constraint firstItem="ytb-kK-wDt" firstAttribute="centerX" secondItem="T1G-YY-8I2" secondAttribute="centerX" id="fXr-Tr-Ivx"/>
+                                                <constraint firstItem="ytb-kK-wDt" firstAttribute="centerY" secondItem="T1G-YY-8I2" secondAttribute="centerY" id="wfC-Gm-pZr"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <segue destination="9GG-Km-6Kt" kind="show" identifier="SegueToAMDGPUs" id="xYV-TO-Lag"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="Nvidia" id="6Jj-u2-cA5">
+                                        <rect key="frame" x="265" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6iV-h5-OFt">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nvidia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ae-2m-s2x">
+                                                    <rect key="frame" x="90" y="92" width="69" height="66"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Ae-2m-s2x" firstAttribute="centerY" secondItem="6iV-h5-OFt" secondAttribute="centerY" id="KmF-WO-z6e"/>
+                                                <constraint firstItem="0Ae-2m-s2x" firstAttribute="centerX" secondItem="6iV-h5-OFt" secondAttribute="centerX" id="fRg-ch-VNo"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <connections>
+                                            <segue destination="Lyc-4B-btl" kind="show" identifier="SegueToNvidiaGPUs" id="xxz-6X-Yxq"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -162,13 +469,14 @@
                             <constraint firstItem="f0R-lu-Up7" firstAttribute="trailing" secondItem="tGf-vj-7M8" secondAttribute="trailing" id="lmY-NG-AEK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="pa5-oc-dBL"/>
                     <connections>
                         <outlet property="collectionView" destination="tGf-vj-7M8" id="7rk-Pb-sAN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMb-UD-Ep0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="309" y="126"/>
+            <point key="canvasLocation" x="522.90076335877859" y="-602.11267605633805"/>
         </scene>
     </scenes>
     <resources>
@@ -177,6 +485,12 @@
         </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,6 +10,8 @@
 		EB60F3392B1900D6007B7955 /* PCPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F3382B1900D6007B7955 /* PCPart.swift */; };
 		EB60F33B2B29632E007B7955 /* BuildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F33A2B29632E007B7955 /* BuildViewController.swift */; };
 		EB60F33D2B2A33FA007B7955 /* GPUManufacturerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F33C2B2A33FA007B7955 /* GPUManufacturerViewController.swift */; };
+		EB60F33F2B2A54CA007B7955 /* AMDGPUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F33E2B2A54CA007B7955 /* AMDGPUViewController.swift */; };
+		EB60F3412B2A56D8007B7955 /* NvidiaGPUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F3402B2A56D8007B7955 /* NvidiaGPUViewController.swift */; };
 		EB90F1172B166491000C5C17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90F1162B166491000C5C17 /* AppDelegate.swift */; };
 		EB90F1192B166491000C5C17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90F1182B166491000C5C17 /* SceneDelegate.swift */; };
 		EB90F11E2B166491000C5C17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB90F11C2B166491000C5C17 /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 		EB60F3382B1900D6007B7955 /* PCPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCPart.swift; sourceTree = "<group>"; };
 		EB60F33A2B29632E007B7955 /* BuildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildViewController.swift; sourceTree = "<group>"; };
 		EB60F33C2B2A33FA007B7955 /* GPUManufacturerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUManufacturerViewController.swift; sourceTree = "<group>"; };
+		EB60F33E2B2A54CA007B7955 /* AMDGPUViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMDGPUViewController.swift; sourceTree = "<group>"; };
+		EB60F3402B2A56D8007B7955 /* NvidiaGPUViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NvidiaGPUViewController.swift; sourceTree = "<group>"; };
 		EB90F1132B166491000C5C17 /* EvalBuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvalBuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB90F1162B166491000C5C17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB90F1182B166491000C5C17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				EB60F3382B1900D6007B7955 /* PCPart.swift */,
 				EB60F33A2B29632E007B7955 /* BuildViewController.swift */,
 				EB60F33C2B2A33FA007B7955 /* GPUManufacturerViewController.swift */,
+				EB60F33E2B2A54CA007B7955 /* AMDGPUViewController.swift */,
+				EB60F3402B2A56D8007B7955 /* NvidiaGPUViewController.swift */,
 			);
 			path = EvalBuild;
 			sourceTree = "<group>";
@@ -265,7 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB60F33D2B2A33FA007B7955 /* GPUManufacturerViewController.swift in Sources */,
+				EB60F3412B2A56D8007B7955 /* NvidiaGPUViewController.swift in Sources */,
 				EB90F1172B166491000C5C17 /* AppDelegate.swift in Sources */,
+				EB60F33F2B2A54CA007B7955 /* AMDGPUViewController.swift in Sources */,
 				EB60F33B2B29632E007B7955 /* BuildViewController.swift in Sources */,
 				EB60F3392B1900D6007B7955 /* PCPart.swift in Sources */,
 				EB90F1192B166491000C5C17 /* SceneDelegate.swift in Sources */,
