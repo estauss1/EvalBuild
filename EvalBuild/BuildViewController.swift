@@ -66,6 +66,10 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
             let GPUManufacturerVCRef = segue.destination as! GPUManufacturerViewController
             GPUManufacturerVCRef.buildVCRef = self
         }
+        else if(segue.identifier == "SegueToCPUManufacturer"){
+            let CPUManufacturerVCRef = segue.destination as! CPUManufacturerViewController
+            CPUManufacturerVCRef.buildVCRef = self
+        }
     }
 
     /*
