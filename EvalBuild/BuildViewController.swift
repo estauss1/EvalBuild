@@ -86,6 +86,10 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
             let CoolerVCRef = segue.destination as! CoolerViewController
             CoolerVCRef.buildVCRef = self
         }
+        else if(segue.identifier == "SegueToCase"){
+            let CaseVCRef = segue.destination as! CaseViewController
+            CaseVCRef.buildVCRef = self
+        }
     }
 
     /*

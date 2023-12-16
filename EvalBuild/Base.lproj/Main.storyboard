@@ -112,6 +112,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="CWj-LA-F2j" kind="show" identifier="SegueToCase" id="VAV-oT-tGJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -2073,6 +2076,119 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FR2-mX-MFk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1640.4580152671756" y="1317.605633802817"/>
+        </scene>
+        <!--Case View Controller-->
+        <scene sceneID="t1b-XL-YgQ">
+            <objects>
+                <viewController id="CWj-LA-F2j" customClass="CaseViewController" customModule="EvalBuild" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yih-ku-N0x">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L98-kx-h5j">
+                                <rect key="frame" x="0.0" y="103" width="393" height="515"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3KO-gc-9M9">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FullTower" id="fOW-VJ-tQL">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kcz-Uk-HCN">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Full Tower" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVf-OD-C1k">
+                                                    <rect key="frame" x="42" y="54" width="77" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gVf-OD-C1k" firstAttribute="centerX" secondItem="kcz-Uk-HCN" secondAttribute="centerX" id="PVQ-Dq-gye"/>
+                                                <constraint firstItem="gVf-OD-C1k" firstAttribute="centerY" secondItem="kcz-Uk-HCN" secondAttribute="centerY" id="kmA-3E-r0S"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="MidTower" id="27l-9p-XGM">
+                                        <rect key="frame" x="265" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="V0w-oV-7qJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mid Tower" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2a-ly-gP4">
+                                                    <rect key="frame" x="43" y="54" width="79" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="A2a-ly-gP4" firstAttribute="centerX" secondItem="V0w-oV-7qJ" secondAttribute="centerX" id="Dag-HZ-o0E"/>
+                                                <constraint firstItem="A2a-ly-gP4" firstAttribute="centerY" secondItem="V0w-oV-7qJ" secondAttribute="centerY" id="Wd8-DX-d0z"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="MiniTower" id="R17-9E-xLj">
+                                        <rect key="frame" x="0.0" y="138" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="R5L-b6-FVB">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mini Tower" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itT-6Q-hrl">
+                                                    <rect key="frame" x="43" y="54" width="82" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="itT-6Q-hrl" firstAttribute="centerX" secondItem="R5L-b6-FVB" secondAttribute="centerX" id="Aw8-HA-Y15"/>
+                                                <constraint firstItem="itT-6Q-hrl" firstAttribute="centerY" secondItem="R5L-b6-FVB" secondAttribute="centerY" id="blp-1Y-oY5"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oI6-9A-uaq">
+                                <rect key="frame" x="0.0" y="618" width="393" height="200"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GFP-vt-sri"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oI6-9A-uaq" firstAttribute="top" secondItem="L98-kx-h5j" secondAttribute="bottom" id="5gX-vL-CkZ"/>
+                            <constraint firstItem="GFP-vt-sri" firstAttribute="trailing" secondItem="oI6-9A-uaq" secondAttribute="trailing" id="7Ex-Cq-Ilj"/>
+                            <constraint firstItem="GFP-vt-sri" firstAttribute="bottom" secondItem="L98-kx-h5j" secondAttribute="bottom" constant="200" id="M20-jY-x0O"/>
+                            <constraint firstItem="L98-kx-h5j" firstAttribute="top" secondItem="GFP-vt-sri" secondAttribute="top" id="Ukc-Qu-BEb"/>
+                            <constraint firstItem="oI6-9A-uaq" firstAttribute="leading" secondItem="GFP-vt-sri" secondAttribute="leading" id="YpR-ol-D0X"/>
+                            <constraint firstItem="GFP-vt-sri" firstAttribute="trailing" secondItem="L98-kx-h5j" secondAttribute="trailing" id="dG6-4F-4W0"/>
+                            <constraint firstItem="L98-kx-h5j" firstAttribute="leading" secondItem="GFP-vt-sri" secondAttribute="leading" id="jal-RO-IRc"/>
+                            <constraint firstItem="GFP-vt-sri" firstAttribute="bottom" secondItem="oI6-9A-uaq" secondAttribute="bottom" id="yNr-WG-hf1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5kr-mF-VUg"/>
+                    <connections>
+                        <outlet property="collectionView" destination="L98-kx-h5j" id="KIi-IZ-94j"/>
+                        <outlet property="selectedLabel" destination="oI6-9A-uaq" id="Q1n-31-1uf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lbo-KM-fh8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2537" y="1082"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

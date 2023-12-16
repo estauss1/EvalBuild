@@ -24,6 +24,7 @@
 		EB60F3572B2E2D9A007B7955 /* StorageTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F3562B2E2D9A007B7955 /* StorageTypeViewController.swift */; };
 		EB60F3592B2E2F59007B7955 /* StorageAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F3582B2E2F59007B7955 /* StorageAmountViewController.swift */; };
 		EB60F35B2B2E4012007B7955 /* CoolerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F35A2B2E4012007B7955 /* CoolerViewController.swift */; };
+		EB60F35D2B2E66D8007B7955 /* CaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F35C2B2E66D8007B7955 /* CaseViewController.swift */; };
 		EB90F1172B166491000C5C17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90F1162B166491000C5C17 /* AppDelegate.swift */; };
 		EB90F1192B166491000C5C17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90F1182B166491000C5C17 /* SceneDelegate.swift */; };
 		EB90F11E2B166491000C5C17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB90F11C2B166491000C5C17 /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		EB60F3562B2E2D9A007B7955 /* StorageTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTypeViewController.swift; sourceTree = "<group>"; };
 		EB60F3582B2E2F59007B7955 /* StorageAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageAmountViewController.swift; sourceTree = "<group>"; };
 		EB60F35A2B2E4012007B7955 /* CoolerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolerViewController.swift; sourceTree = "<group>"; };
+		EB60F35C2B2E66D8007B7955 /* CaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseViewController.swift; sourceTree = "<group>"; };
 		EB90F1132B166491000C5C17 /* EvalBuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvalBuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB90F1162B166491000C5C17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB90F1182B166491000C5C17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				EB60F3562B2E2D9A007B7955 /* StorageTypeViewController.swift */,
 				EB60F3582B2E2F59007B7955 /* StorageAmountViewController.swift */,
 				EB60F35A2B2E4012007B7955 /* CoolerViewController.swift */,
+				EB60F35C2B2E66D8007B7955 /* CaseViewController.swift */,
 			);
 			path = EvalBuild;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				EB60F3532B2D39ED007B7955 /* MotherboardViewController.swift in Sources */,
 				EB60F33B2B29632E007B7955 /* BuildViewController.swift in Sources */,
 				EB60F3572B2E2D9A007B7955 /* StorageTypeViewController.swift in Sources */,
+				EB60F35D2B2E66D8007B7955 /* CaseViewController.swift in Sources */,
 				EB60F3492B2D02FE007B7955 /* RAMGenViewController.swift in Sources */,
 				EB60F3392B1900D6007B7955 /* PCPart.swift in Sources */,
 				EB90F1192B166491000C5C17 /* SceneDelegate.swift in Sources */,
