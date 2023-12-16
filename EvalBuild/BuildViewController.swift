@@ -70,6 +70,10 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
             let CPUManufacturerVCRef = segue.destination as! CPUManufacturerViewController
             CPUManufacturerVCRef.buildVCRef = self
         }
+        else if(segue.identifier == "SegueToRAMGen"){
+            let RAMGenVCRef = segue.destination as! RAMGenViewController
+            RAMGenVCRef.buildVCRef = self
+        }
     }
 
     /*

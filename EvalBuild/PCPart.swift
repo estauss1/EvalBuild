@@ -370,25 +370,23 @@ class Cooler: PCPart {
     
 }
 
-enum DDRGeneration{
-    case DDR4
-    case DDR5
+enum DDRGeneration: String{
+    case DDR4 = "DDR4"
+    case DDR5 = "DDR5"
 }
 
-enum RAMSpeed{
-    case mhz3200
-    case mhz3600
-    case mhz4400
-    case mhz5600
-    case mhz6000
-    case mhz6400
-    case mhz7200
+enum RAMSpeed: Int{
+    case mhz3200 = 3200
+    case mhz3600 = 3600
+    case mhz4400 = 4400
+    case mhz5600 = 5600
+    case mhz6000 = 6000
+    case mhz6400 = 6400
 }
 
 enum RAMAmount: Int{
     case gb16 = 16
     case gb32 = 32
-    case gb48 = 48
     case gb64 = 64
 }
 
@@ -397,7 +395,7 @@ class RAM: PCPart{
     let speed: RAMSpeed
     let amount: RAMAmount
     
-    init(averagePrice: Float, name: String, speed: RAMSpeed, amount: RAMAmount){
+    init(averagePrice: Float, speed: RAMSpeed, amount: RAMAmount){
         self.speed = speed
         self.amount = amount
         
@@ -408,6 +406,8 @@ class RAM: PCPart{
         else{
             gen = DDRGeneration.DDR5
         }
+        
+        let name = "\(self.amount.rawValue)GB " + gen.rawValue + " \(self.speed.rawValue)"
         
         super.init(averagePrice: averagePrice, name: name, maxWattsDrawn: 5)
     }
