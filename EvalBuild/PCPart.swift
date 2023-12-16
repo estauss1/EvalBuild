@@ -91,10 +91,10 @@ enum Chipset: String{
 }
 
 //higher raw value means larger in size
-enum MoboSize: Int{
-    case ATX = 3
-    case microATX = 2
-    case MiniITX = 1
+enum MoboSize: String{
+    case ATX = "ATX"
+    case microATX = "MicroATX"
+    case MiniITX = "MiniITX"
 }
 
 class Motherboard: PCPart{
@@ -102,7 +102,7 @@ class Motherboard: PCPart{
     public let size: MoboSize
     public let compatibleManufacturer: Manufacturer
     
-    init(averagePrice: Float, name: String, chipset: Chipset, size: MoboSize){
+    init(averagePrice: Float, chipset: Chipset, size: MoboSize){
         self.chipset = chipset
         self.size = size
         
@@ -112,6 +112,8 @@ class Motherboard: PCPart{
         }else{
             compatibleManufacturer = Manufacturer.AMD
         }
+        
+        let name = self.size.rawValue + " " + self.chipset.rawValue
         
         super.init(averagePrice: averagePrice, name: name, maxWattsDrawn: 50)
     }

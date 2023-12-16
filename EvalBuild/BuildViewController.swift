@@ -74,6 +74,10 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
             let RAMGenVCRef = segue.destination as! RAMGenViewController
             RAMGenVCRef.buildVCRef = self
         }
+        else if(segue.identifier == "SegueToMotherboard"){
+            let MoboGroupVCRef = segue.destination as! MotherboardGroupViewController
+            MoboGroupVCRef.buildVCRef = self
+        }
     }
 
     /*
