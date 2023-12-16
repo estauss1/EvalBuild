@@ -82,6 +82,10 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
             let StorageTypeVCRef = segue.destination as! StorageTypeViewController
             StorageTypeVCRef.buildVCRef = self
         }
+        else if(segue.identifier == "SegueToCooler"){
+            let CoolerVCRef = segue.destination as! CoolerViewController
+            CoolerVCRef.buildVCRef = self
+        }
     }
 
     /*

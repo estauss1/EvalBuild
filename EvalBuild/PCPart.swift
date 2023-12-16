@@ -332,24 +332,33 @@ enum CoolerType{
 class Cooler: PCPart {
     public let type: CoolerType
     
-    init(averagePrice: Float, name: String, type: CoolerType){
+    init(averagePrice: Float, type: CoolerType){
         self.type = type
         
         var maxWatts: Int
         let caseFanWatts = 3
         let pumpWatts = 30
+        let name: String
         
         switch self.type{
-        case .LowProfileAir, .SingleTowerAir:
+        case .LowProfileAir:
             maxWatts = caseFanWatts
+            name = "Low Profile Air Cooler"
+        case .SingleTowerAir:
+            maxWatts = caseFanWatts
+            name = "Single Tower Air Cooler"
         case .DualTowerAir:
             maxWatts = caseFanWatts * 2
+            name = "Dual Tower Air Cooler"
         case .Water120:
             maxWatts = pumpWatts + caseFanWatts
+            name = "120mm Water Cooler"
         case .Water240:
             maxWatts = pumpWatts + caseFanWatts * 2
+            name = "240mm Water Cooler"
         case .Water360:
             maxWatts = pumpWatts + caseFanWatts * 3
+            name = "360mm Water Cooler"
         }
         
         super.init(averagePrice: averagePrice, name: name, maxWattsDrawn: maxWatts)
