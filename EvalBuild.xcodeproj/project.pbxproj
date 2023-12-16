@@ -21,6 +21,8 @@
 		EB60F34F2B2D31DD007B7955 /* DDR5SpeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F34E2B2D31DD007B7955 /* DDR5SpeedViewController.swift */; };
 		EB60F3512B2D3775007B7955 /* MotherboardGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F3502B2D3775007B7955 /* MotherboardGroupViewController.swift */; };
 		EB60F3532B2D39ED007B7955 /* MotherboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F3522B2D39ED007B7955 /* MotherboardViewController.swift */; };
+		EB60F3572B2E2D9A007B7955 /* StorageTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F3562B2E2D9A007B7955 /* StorageTypeViewController.swift */; };
+		EB60F3592B2E2F59007B7955 /* StorageAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB60F3582B2E2F59007B7955 /* StorageAmountViewController.swift */; };
 		EB90F1172B166491000C5C17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90F1162B166491000C5C17 /* AppDelegate.swift */; };
 		EB90F1192B166491000C5C17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90F1182B166491000C5C17 /* SceneDelegate.swift */; };
 		EB90F11E2B166491000C5C17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB90F11C2B166491000C5C17 /* Main.storyboard */; };
@@ -63,6 +65,8 @@
 		EB60F34E2B2D31DD007B7955 /* DDR5SpeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDR5SpeedViewController.swift; sourceTree = "<group>"; };
 		EB60F3502B2D3775007B7955 /* MotherboardGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherboardGroupViewController.swift; sourceTree = "<group>"; };
 		EB60F3522B2D39ED007B7955 /* MotherboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherboardViewController.swift; sourceTree = "<group>"; };
+		EB60F3562B2E2D9A007B7955 /* StorageTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTypeViewController.swift; sourceTree = "<group>"; };
+		EB60F3582B2E2F59007B7955 /* StorageAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageAmountViewController.swift; sourceTree = "<group>"; };
 		EB90F1132B166491000C5C17 /* EvalBuild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvalBuild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB90F1162B166491000C5C17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB90F1182B166491000C5C17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				EB60F34C2B2D0AB0007B7955 /* RAMAmountViewController.swift */,
 				EB60F3502B2D3775007B7955 /* MotherboardGroupViewController.swift */,
 				EB60F3522B2D39ED007B7955 /* MotherboardViewController.swift */,
+				EB60F3562B2E2D9A007B7955 /* StorageTypeViewController.swift */,
+				EB60F3582B2E2F59007B7955 /* StorageAmountViewController.swift */,
 			);
 			path = EvalBuild;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 			files = (
 				EB60F34D2B2D0AB0007B7955 /* RAMAmountViewController.swift in Sources */,
 				EB60F33D2B2A33FA007B7955 /* GPUManufacturerViewController.swift in Sources */,
+				EB60F3592B2E2F59007B7955 /* StorageAmountViewController.swift in Sources */,
 				EB60F3412B2A56D8007B7955 /* NvidiaGPUViewController.swift in Sources */,
 				EB60F34B2B2D0678007B7955 /* DDR4SpeedViewController.swift in Sources */,
 				EB60F3432B2A8AC4007B7955 /* CPUManufacturerViewController.swift in Sources */,
@@ -308,6 +315,7 @@
 				EB60F34F2B2D31DD007B7955 /* DDR5SpeedViewController.swift in Sources */,
 				EB60F3532B2D39ED007B7955 /* MotherboardViewController.swift in Sources */,
 				EB60F33B2B29632E007B7955 /* BuildViewController.swift in Sources */,
+				EB60F3572B2E2D9A007B7955 /* StorageTypeViewController.swift in Sources */,
 				EB60F3492B2D02FE007B7955 /* RAMGenViewController.swift in Sources */,
 				EB60F3392B1900D6007B7955 /* PCPart.swift in Sources */,
 				EB90F1192B166491000C5C17 /* SceneDelegate.swift in Sources */,

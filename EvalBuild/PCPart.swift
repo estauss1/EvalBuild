@@ -175,28 +175,30 @@ class CPU: PCPart {
 }
 
 //raw values are # of GB
-enum StorageCapacity: Int{
-    case HalfTB = 500
-    case OneTB = 1000
-    case TwoTB = 2000
-    case FourTB = 4000
-    case EightTB = 8000
+enum StorageCapacity: String{
+    case HalfTB = "500GB"
+    case OneTB = "1TB"
+    case TwoTB = "2TB"
+    case FourTB = "4TB"
+    case EightTB = "8TB"
 }
 
-enum StorageType{
-    case HDD
-    case SATA
-    case NVME
+enum StorageType: String{
+    case HDD = "HDD"
+    case SATA = "SATA SSD"
+    case NVME = "NVME SSD"
 }
 
 class Storage: PCPart{
     private let capacity: StorageCapacity
     private let type: StorageType
     
-    init(averagePrice: Float, name: String, capacity: StorageCapacity,
+    init(averagePrice: Float, capacity: StorageCapacity,
          type: StorageType){
         self.capacity = capacity
         self.type = type
+        
+        let name = self.capacity.rawValue + " " + self.type.rawValue
         
         super.init(averagePrice: averagePrice, name: name, maxWattsDrawn: 10)
     }

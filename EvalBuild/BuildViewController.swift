@@ -78,6 +78,10 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
             let MoboGroupVCRef = segue.destination as! MotherboardGroupViewController
             MoboGroupVCRef.buildVCRef = self
         }
+        else if(segue.identifier == "SegueToStorage"){
+            let StorageTypeVCRef = segue.destination as! StorageTypeViewController
+            StorageTypeVCRef.buildVCRef = self
+        }
     }
 
     /*
