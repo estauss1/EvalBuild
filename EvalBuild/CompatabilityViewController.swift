@@ -94,6 +94,7 @@ class CompatabilityViewController: UIViewController, UITableViewDelegate, UITabl
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center // Set the text alignment to center
+        label.textColor = .black
 
 
         switch indexPath.row{
@@ -176,6 +177,10 @@ class CompatabilityViewController: UIViewController, UITableViewDelegate, UITabl
         }
         
         cell.contentView.addSubview(label)
+        
+        //add border
+        cell.contentView.layer.borderWidth = 1.0
+        cell.contentView.layer.borderColor = UIColor.black.cgColor
         
         // Center the label using Auto Layout constraints
         NSLayoutConstraint.activate([
