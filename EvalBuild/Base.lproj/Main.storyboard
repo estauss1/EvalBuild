@@ -60,12 +60,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <colorWell contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vcT-7x-KIj">
+                                <rect key="frame" x="262" y="340" width="28" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </colorWell>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wDP-Kx-wd6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="cg6-oF-yMa"/>
                     <connections>
+                        <outlet property="backgroundCW" destination="vcT-7x-KIj" id="tP5-RE-FFR"/>
                         <outlet property="opacitySlider" destination="2Fi-m4-ubf" id="5tz-Ci-9kQ"/>
                         <outlet property="partCW" destination="fue-fI-CTV" id="QWt-rP-dU2"/>
                         <outlet property="titleCW" destination="Jgb-nb-jru" id="fQS-wb-tQ2"/>

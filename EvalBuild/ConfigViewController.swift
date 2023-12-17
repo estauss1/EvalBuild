@@ -13,6 +13,7 @@ class ConfigViewController: UIViewController {
     
     @IBOutlet weak var titleCW: UIColorWell!
     
+    @IBOutlet weak var backgroundCW: UIColorWell!
     @IBOutlet weak var opacitySlider: UISlider!
     @IBOutlet weak var partCW: UIColorWell!
  
@@ -22,7 +23,7 @@ class ConfigViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        //buildVCRef?.backgroundColor = backgroundCW.selectedColor ?? UIColor.yellow
+        buildVCRef?.backgroundColor = backgroundCW.selectedColor ?? UIColor.yellow
         buildVCRef?.partNameColor = partCW.selectedColor ?? UIColor.white
         buildVCRef?.titleColor = titleCW.selectedColor ?? UIColor.white
     }
