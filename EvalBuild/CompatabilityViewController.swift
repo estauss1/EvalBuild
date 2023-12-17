@@ -95,7 +95,8 @@ class CompatabilityViewController: UIViewController, UITableViewDelegate, UITabl
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center // Set the text alignment to center
         label.textColor = .black
-
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
 
         switch indexPath.row{
         case 0:
