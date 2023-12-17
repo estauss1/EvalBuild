@@ -16,8 +16,16 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var pleaseFinishLabel: UILabel!
     
+    @IBOutlet weak var titleRef: UILabel!
+    var backgroundOpacity: CGFloat = CGFloat(1.0)
+    var backgroundColor: UIColor = UIColor.yellow
+    var titleColor: UIColor = UIColor.white
+    var partNameColor: UIColor = UIColor.white
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         partsTable.dataSource = self
         partsTable.delegate = self
@@ -31,6 +39,13 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         pleaseFinishLabel.text = "Swipe Left For Evaluation"
         pleaseFinishLabel.textColor = UIColor.black
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        view.alpha = backgroundOpacity
+        view.backgroundColor = backgroundColor
+        titleRef.textColor = titleColor
+        
     }
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,6 +65,7 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center // Set the text alignment to center
+        label.textColor = partNameColor
 
         if let part = parts[indexPath.row]{
             label.text = part.name
@@ -110,8 +126,15 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
             let CompatVCRef = segue.destination as! CompatabilityViewController
             CompatVCRef.parts = self.parts
         }
+        else if(segue.identifier == "SegueToConfig"){
+            let ConfigVCRef = segue.destination as! ConfigViewController
+            ConfigVCRef.buildVCRef = self
+        }
     }
-
+    
+    @IBAction func configButtonPressed(_ sender: Any) {
+    }
+    
     @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
         // Check if all members of the array are not nil
         let allPartsSelected = parts.allSatisfy { $0 != nil }
