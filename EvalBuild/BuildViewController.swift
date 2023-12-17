@@ -14,6 +14,7 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     var parts: [PCPart?] = [nil, nil, nil, nil, nil, nil, nil, nil]
     
+    @IBOutlet weak var pleaseFinishLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,14 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
         partsTable.delegate = self
         
         partsTable.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        // Add the swipe gesture recognizer
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeGesture.direction = .left
+        view.addGestureRecognizer(swipeGesture)
+
+        pleaseFinishLabel.text = "Swipe Left For Evaluation"
+        pleaseFinishLabel.textColor = UIColor.black
     }
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,6 +71,9 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        pleaseFinishLabel.textColor = UIColor.black
+        pleaseFinishLabel.text = "Swipe Left For Evaluation"
+        
         if(segue.identifier == "SequeToGPUManufacturer"){
             let GPUManufacturerVCRef = segue.destination as! GPUManufacturerViewController
             GPUManufacturerVCRef.buildVCRef = self
@@ -94,8 +106,25 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
             let PSUVCRef = segue.destination as! PSUViewController
             PSUVCRef.buildVCRef = self
         }
+        else if(segue.identifier == "SegueToCompat"){
+            let CompatVCRef = segue.destination as! CompatabilityViewController
+            CompatVCRef.parts = self.parts
+        }
     }
 
+    @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
+        // Check if all members of the array are not nil
+        let allPartsSelected = parts.allSatisfy { $0 != nil }
+
+        if allPartsSelected {
+            performSegue(withIdentifier: "SegueToCompat", sender: self)
+        } else {
+            // Display a message to the user
+            pleaseFinishLabel.text = "Please Finish Selecting Your Parts"
+            pleaseFinishLabel.textColor = UIColor.red
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

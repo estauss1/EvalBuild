@@ -232,10 +232,15 @@ class PSU: PCPart{
         super.init(averagePrice: averagePrice, name: name, maxWattsDrawn: 0)
     }
     
-    func IsCompatible(with parts: [PCPart]) -> Compatibility{
+    func IsCompatible(with parts: [PCPart?]) -> Compatibility{
         var maxSystemLoad: Float = 0.0
         for part in parts{
-            maxSystemLoad += Float(part.maxWattsDrawn)
+            if let part{
+                maxSystemLoad += Float(part.maxWattsDrawn)
+            }
+            else{
+                print("nil passed to psu iscompat")
+            }
         }
         
         let overhead = maxSystemLoad * 0.2
