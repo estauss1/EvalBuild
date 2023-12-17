@@ -1,18 +1,18 @@
 //
-//  BuildControllerViewController.swift
+//  CompatabilityViewController.swift
 //  EvalBuild
 //
-//  Created by Eric Stauss on 12/12/23.
+//  Created by Eric Stauss on 12/16/23.
 //
 
 import UIKit
 
-class BuildViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CompatabilityViewController: UIViewController {
     @IBOutlet weak var partsTable: UITableView!
     
-    let cellIdentifiers = ["GPU", "CPU", "RAM", "Motherboard", "Storage", "Cooler", "Case", "PSU"]
+    let cellIdentifiers = ["GPU", "CPU", "RAM", "Motherboard", "Storage", "Cooler", "Case"]
     
-    var parts: [PCPart?] = [nil, nil, nil, nil, nil, nil, nil, nil]
+    var parts: [PCPart?] = [nil, nil, nil, nil, nil, nil, nil]
     
     
     override func viewDidLoad() {
@@ -89,10 +89,6 @@ class BuildViewController: UIViewController, UITableViewDataSource, UITableViewD
         else if(segue.identifier == "SegueToCase"){
             let CaseVCRef = segue.destination as! CaseViewController
             CaseVCRef.buildVCRef = self
-        }
-        else if(segue.identifier == "SegueToPSU"){
-            let PSUVCRef = segue.destination as! PSUViewController
-            PSUVCRef.buildVCRef = self
         }
     }
 
